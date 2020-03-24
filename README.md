@@ -9,4 +9,4 @@
 
 ## Ejecutar PHP por consola
 1. Añadir C:\xampp\php\ dentro del PATH en variables de entorno
-2. Ejecutar el comando: php php/buscar.php (Donde tengas el archivo)
+2. Ejecutar el comando: php _ubicaciónCarpeta_/php/buscar.php (Donde tengas el archivo)

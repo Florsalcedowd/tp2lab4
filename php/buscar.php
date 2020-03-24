@@ -12,20 +12,17 @@ for ($codigo = 1; $codigo <= 300; $codigo++) {
     if ($obj != null) {
         // Recorro cada objeto del arreglo
         foreach ($obj as $o) {
-            $nombrePais = (string) $o->name;
-            $capitalPais = (string) $o->capital;
+            // Addslashes formatea los string que tienen apóstrofes en su interior
+            $nombrePais = addslashes((string) $o->name);
+            $capitalPais = addslashes((string) $o->capital);
             $region = (string) $o->region;
             $poblacion = $o->population;
             $latitud = $o->latlng[0];
             $longitud = $o->latlng[1];
             $codigoPais = $codigo;
 
-            // Para los nombres que incluyen apostrofes
-            $capitalPais = addslashes($capitalPais);
-            $nombrePais = addslashes($nombrePais);
-
             // Busco el pais en la base de datos
-            $sql = "SELECT * FROM pais WHERE codigoPais = $codigo";
+            $sql = "SELECT codigoPais FROM pais WHERE codigoPais = $codigo";
             $result = mysqli_query($conn, $sql);
             $paisSql = mysqli_fetch_array($result);
 
