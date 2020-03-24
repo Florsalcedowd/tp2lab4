@@ -36,7 +36,7 @@ for ($codigo = 1; $codigo <= 300; $codigo++) {
                 $sqlUpdate = "UPDATE pais SET nombrePais = '{$nombrePais}', capitalPais = '{$capitalPais}', region = '{$region}', poblacion = '{$poblacion}', latitud = '{$latitud}', longitud = '{$longitud}' WHERE codigoPais = $codigo";
 
                 if ($conn->query($sqlUpdate) === TRUE) {
-                    echo $codigo . " || Registro actualizado! <br>";
+                    echo $codigo . " || Registro actualizado!" . "\n";
                 } else {
                     echo "ERROR: No se ejecuto $sqlUpdate. " . mysqli_error($conn);
                 }
@@ -48,7 +48,7 @@ for ($codigo = 1; $codigo <= 300; $codigo++) {
                 $sqlInsert = "INSERT INTO pais (codigoPais, nombrePais, capitalPais, region, poblacion, latitud, longitud) VALUES ('{$codigoPais}', '{$nombrePais}', '{$capitalPais}', '{$region}', '{$poblacion}', '{$latitud}', '{$longitud}')";
 
                 if ($conn->query($sqlInsert) === TRUE) {
-                    echo $codigo . " || Nuevo registro creado! <br>";
+                    echo $codigo . " || Nuevo registro creado!" . "\n";
                 } else {
                     echo "Error: " . $sqlInsert . "<br>" . mysqli_error($conn);
                 }
@@ -59,4 +59,4 @@ for ($codigo = 1; $codigo <= 300; $codigo++) {
     }
 }
 
-?>
+
